@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, my love</title>
+    <style>
+        /* --- GAYA GLOBAL --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffeaee, #ffccd5, #ffeaee);
+            color: #4a3b40;
+            text-align: center;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- CONTAINER SECTIONS --- */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* --- DEKORASI & TEKS --- */
+        .heart-icon {
+            font-size: 2.5rem;
+            color: #ff4d6d;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 10px;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .subtitle-small {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a38890;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: normal;
+            font-style: italic;
+            color: #4a3b40;
+        }
+        h1 span {
+            color: #d94060;
+            display: block;
+            font-family: 'Brush Script MT', cursive, sans-serif;
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: normal;
+            font-style: italic;
+            color: #4a3b40;
+            margin-bottom: 20px;
+        }
+        h2 span {
+            color: #d94060;
+        }
+
+        .card-quote {
+            background: rgba(255, 255, 255, 0.75);
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 450px;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #614d53;
+            box-shadow: 0 8px 20px rgba(242, 182, 193, 0.4);
+            margin: 20px auto;
+        }
+
+        /* --- TAG / BUTTON ESTETIK --- */
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            max-width: 400px;
+        }
+        .tag {
+            background: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #a87c87;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #ffe3e8;
+        }
+
+        /* --- EFEK FOTO POLAROID --- */
+        .polaroid-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+            max-width: 140px;
+        }
+        .polaroid:nth-child(even) {
+            transform: rotate(4deg);
+        }
+        .polaroid:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg);
+            z-index: 10;
+        }
+        .polaroid img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+        .polaroid-caption {
+            font-size: 0.65rem;
+            color: #7a686d;
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* --- SUSUNAN HATI BERBENTUK FOTO --- */
+        .heart-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 45px);
+            grid-gap: 5px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .heart-grid img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid white;
+        }
+        /* Membuat pola bentuk hati kosong/isi di grid 5x5 */
+        .heart-grid .empty {
+            visibility: hidden;
+        }
+
+        .scroll-down {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b59ba3;
+            margin-top: 30px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="section">
+        <div class="heart-icon">💖</div>
+        <div class="subtitle-small">This is just for you</div>
+        <h1>Hello, <br><span>my love</span></h1>
+        
+        <div class="polaroid-gallery">
+            <div class="polaroid">
+                <img src="dia.jpg" alt="Foto Kamu">
+                <div class="polaroid-caption">us ♡</div>
+            </div>
+            <div class="polaroid">
+                <img src="dia1.jpg" alt="Foto Pacar">
+                <div class="polaroid-caption">my fav person</div>
+            </div>
+            <div class="polaroid">
+                <img src="dia2.jpg" alt="Foto Bersama">
+                <div class="polaroid-caption">always ✨</div>
+            </div>
+        </div>
+
+        <div class="tag-container">
+            <div class="tag">my favourite person</div>
+            <div class="tag">my sunshine</div>
+            <div class="tag">my whole heart</div>
+        </div>
+        
+        <div class="scroll-down">Scroll ↓</div>
+    </div>
+
+    <div class="section">
+        <div class="subtitle-small">A reminder from me</div>
+        <h2>You are <br><span>more than enough</span></h2>
+        
+        <div class="card-quote">
+            "Kita pertama kali bertemu di Ruang Pertemuan. Sejak hari itu, duniaku berubah menjadi lebih indah. Dan hari ini, kita sudah berjalan bersama sejauh ini..."
+        </div>
+
+        <div class="polaroid">
+            <img src="pertama.jpg" alt="Foto Cerita">
+            <div class="polaroid-caption">our beginning 📍</div>
+        </div>
+
+        <div class="card-quote" style="background: #fff5f7; font-weight: bold; font-style: normal;">
+            ⏳ <span id="counter-days">Menghitung...</span> Hari Bersama
+        </div>
+
+        <div class="tag-container">
+            <div class="tag">enough</div>
+            <div class="tag">worthy</div>
+            <div class="tag">powerful</div>
+            <div class="tag">loved</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="subtitle-small">Made with love</div>
+        <h2>every photo <br>of you is <span>my heart</span></h2>
+        
+        <div class="heart-grid">
+            <div class="empty"></div>
+            <img src="sari.jpg" alt="Foto">
+            <div class="empty"></div>
+            <img src="sari1.jpg" alt="Foto">
+            <div class="empty"></div>
+            
+            <img src="sari2.jpg" alt="Foto">
+            <img src="sari3.jpg" alt="Foto">
+            <img src="sari4.jpg" alt="Foto">
+            <img src="sari5.jpg" alt="Foto">
+            <img src="sari6.jpg" alt="Foto">
+            
+            <img src="sari7.jpg" alt="Foto">
+            <img src="sari8.jpg" alt="Foto">
+            <img src="sari9.jpg" alt="Foto">
+            <img src="sari10.jpg" alt="Foto">
+            <img src="sari11.jpg" alt="Foto">
+            
+            <div class="empty"></div>
+            <img src="sari12.jpg" alt="Foto">
+            <img src="sari13.jpg" alt="Foto">
+            <img src="sari14.jpg" alt="Foto">
+            <div class="empty"></div>
+            
+            <div class="empty"></div>
+            <div class="empty"></div>
+            <img src="sari15.jpg" alt="Foto">
+            <div class="empty"></div>
+            <div class="empty"></div>
+        </div>
+
+        <div class="card-quote" style="max-width: 500px;">
+            Aku membuat halaman ini untukmu, agar kamu selalu ingat ada tempat kecil di mana memori-memori manis kita tersimpan rapi. Tempat di mana kamu selalu dicintai secara utuh.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="subtitle-small">Things I adore about you</div>
+        <h2>the little things <br>that make me <span>fall</span></h2>
+
+        <div class="tag-container" style="max-width: 500px;">
+            <div class="tag">your laugh</div>
+            <div class="tag">your kind heart</div>
+            <div class="tag">your smile</div>
+            <div class="tag">how you care</div>
+            <div class="tag">your silly jokes</div>
+            <div class="tag">your eyes</div>
+            <div class="tag">literally everything</div>
+        </div>
+
+        <div class="polaroid-gallery" style="margin-top: 30px;">
+            <div class="polaroid" style="transform: rotate(-5deg)">
+                <img src="mall.jpg" alt="Aktivitas">
+                <div class="polaroid-caption">jalan-jalan 🍿</div>
+            </div>
+            <div class="polaroid" style="transform: rotate(5deg)">
+                <img src="box.jpg" alt="Aktivitas">
+                <div class="polaroid-caption">photo
+                box
+            </div>
+        </div>
+
+        <div class="card-quote">
+            <strong>Hal-hal yang sering kita lakukan:</strong><br>
+            • Telponan sampai larut malam.<br>
+            • Mencari tempat kopi baru yang kopinya engga strong.<br>
+            • Saling mendengarkan keluh kesah kegiatan seharian.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="subtitle-small">Always and forever</div>
+        <div class="heart-icon" style="font-size: 3.5rem;">💝</div>
+        <h2>with all <br>my <span>love, always.</span></h2>
+
+        <div class="polaroid-gallery">
+            <div class="polaroid" style="transform: rotate(-3deg)">
+                <img src="kamu.jpg" alt="Akhir">
+                <div class="polaroid-caption">forever?</div>
+            </div>
+            <div class="polaroid" style="transform: rotate(3deg)">
+                <img src="kamu1.jpg" alt="Akhir">
+                <div class="polaroid-caption">forever.</div>
+            </div>
+        </div>
+
+        <div class="card-quote">
+            Kamu berhak mendapatkan semua hal baik di dunia ini. Terima kasih telah ada, telah menjadi dirimu sendiri, dan membiarkanku mencintaimu. You are my favourite.
+        </div>
+    </div>
+
+    <script>
+        // SILAHKAN UBAH TANGGAL JADIAN KAMU DI SINI (Format: YYYY-MM-DD)
+        const tanggalJadian = new Date("2024-08-05"); 
+
+        function updateCounter() {
+            const sekarang = new Date();
+            const selisihWaktu = sekarang - tanggalJadian;
+            const totalHari = Math.floor(selisihWaktu / (1000 * 60 * 60 * 24));
+            
+            document.getElementById("counter-days").innerText = totalHari;
+        }
+
+        updateCounter();
+    </script>
+</body>
+</html>
